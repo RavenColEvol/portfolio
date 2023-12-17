@@ -1,0 +1,61 @@
+---
+const actions = [
+  { text: 'Home', href: '#' },
+  { text: 'Projects', href: '#' },
+  { text: 'About', href: '#' },
+  { text: 'Blog', href: '#' },
+]
+---
+
+<nav>
+  <div class='container nav-container'>
+    <div class='action__container'>
+      <span class="logo">Logo</span>
+      {actions.map(action => {
+        return (
+          <a href={action.href}>{action.text}</a>
+        )
+      })}
+    </div>
+    <a class="cta">
+      Let's Talk
+    </a>
+  </div>
+</nav>
+
+<style lang="scss">
+  nav {
+    padding: 2rem;
+    background: var(--black-primary);
+    color: white;
+
+    & .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    & .logo {
+      margin-right: 2rem;
+    }
+
+    & .action__container a {
+      display: inline-block;
+      color: white;
+      margin-right: 1rem;
+      cursor: pointer;
+      padding: 1rem 1rem;
+    }
+  }
+
+  a.cta {
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    background: var(--white-primary);
+    color: var(--black-primary);
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+    cursor: pointer;
+  }
+</style>

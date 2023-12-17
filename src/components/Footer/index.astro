@@ -1,0 +1,105 @@
+---
+const actions = [
+  { text: 'Home', href: '#' },
+  { text: 'About', href: '#' },
+  { text: 'Contact', href: '#' },
+]
+
+const social = [
+  { icon: 'li', href: '#' },
+  { icon: 'li', href: '#' },
+  { icon: 'li', href: '#' },
+]
+---
+
+<footer>
+  <div class='container'>
+    <div class="divider"></div>
+
+    <div class="flex space-between align-center">
+      <span class="logo">Logo</span>
+      <div class="flex">
+        {actions.map(action => 
+          <a class="action-link" href={action.href}>{action.text}</a>
+        )}
+      </div>
+    </div>
+
+    <div class="design-container flex space-between align-center">
+      <span class="designed-by">
+        Developed by Ravi Lamkoti
+      </span>
+      <div class="flex">
+        {social.map(action => 
+          <a class="social-link" href={action.href}>{action.icon}</a>
+        )}
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<style lang="scss">
+  footer {
+    padding: 5rem 2rem 2rem 2rem;
+    background: var(--black-primary);
+    color: var(--white-primary);
+
+    .logo {
+      display: inline-block;
+    }
+
+    & .action-link {
+      display: inline-block;
+      margin-left: 1rem;
+      padding: 1rem 1rem;
+    }
+
+    .design-container {
+      margin-top: 2rem;
+    }
+
+    & .social-link {
+      margin-left: 1rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      color: var(--white-primary);
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+      }
+
+      &::before {
+        z-index: -1;
+        background: #020202;
+      }
+
+      &::after {
+        transform: scale(1.1);
+        z-index: -2;
+        background: var(--gradient);
+      }
+    }
+
+    .container {
+    }
+    
+    & .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--white-primary);
+      margin-bottom: 2rem;
+    }
+  }
+</style>
