@@ -1,16 +1,21 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo.png';
 const actions = [
   { text: 'Home', href: '#' },
   { text: 'Projects', href: '#' },
   { text: 'About', href: '#' },
   { text: 'Blog', href: '#' },
+  { text: 'Recommendations', href: '#' },
 ]
 ---
 
 <nav>
   <div class='container nav-container'>
     <div class='action__container'>
-      <span class="logo">Logo</span>
+      <span class="logo">
+        <Image src={logo} alt="Logo" />
+      </span>
       {actions.map(action => {
         return (
           <a href={action.href}>{action.text}</a>
@@ -25,7 +30,6 @@ const actions = [
 
 <style lang="scss">
   nav {
-    padding: 2rem;
     background: var(--black-primary);
     color: white;
 
@@ -37,6 +41,19 @@ const actions = [
 
     & .logo {
       margin-right: 2rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      img {
+        max-width: 5rem;
+        height: auto;
+      }
+    }
+
+    & .action__container {
+      display: flex;
+
     }
 
     & .action__container a {

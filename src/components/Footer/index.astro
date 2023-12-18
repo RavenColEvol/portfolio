@@ -1,14 +1,12 @@
 ---
+import { Image } from 'astro:assets';
+import SocialIcons from '../SocialIcons/index.astro'
+import logo from '../../assets/logo.png';
+
 const actions = [
   { text: 'Home', href: '#' },
   { text: 'About', href: '#' },
   { text: 'Contact', href: '#' },
-]
-
-const social = [
-  { icon: 'li', href: '#' },
-  { icon: 'li', href: '#' },
-  { icon: 'li', href: '#' },
 ]
 ---
 
@@ -17,7 +15,9 @@ const social = [
     <div class="divider"></div>
 
     <div class="flex space-between align-center">
-      <span class="logo">Logo</span>
+      <span class="logo">
+        <Image src={logo} alt="Logo" />
+      </span>
       <div class="flex">
         {actions.map(action => 
           <a class="action-link" href={action.href}>{action.text}</a>
@@ -29,11 +29,7 @@ const social = [
       <span class="designed-by">
         Developed by Ravi Lamkoti
       </span>
-      <div class="flex">
-        {social.map(action => 
-          <a class="social-link" href={action.href}>{action.icon}</a>
-        )}
-      </div>
+      <SocialIcons />
     </div>
 
   </div>
@@ -41,12 +37,20 @@ const social = [
 
 <style lang="scss">
   footer {
-    padding: 5rem 2rem 2rem 2rem;
+    padding: 5rem 0 2rem;
     background: var(--black-primary);
     color: var(--white-primary);
 
-    .logo {
-      display: inline-block;
+    & .logo {
+      margin-right: 2rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      img {
+        max-width: 5rem;
+        height: auto;
+      }
     }
 
     & .action-link {
@@ -57,39 +61,6 @@ const social = [
 
     .design-container {
       margin-top: 2rem;
-    }
-
-    & .social-link {
-      margin-left: 1rem;
-      width: 3rem;
-      height: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
-      color: var(--white-primary);
-
-      &::before, &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-      }
-
-      &::before {
-        z-index: -1;
-        background: #020202;
-      }
-
-      &::after {
-        transform: scale(1.1);
-        z-index: -2;
-        background: var(--gradient);
-      }
     }
 
     .container {
