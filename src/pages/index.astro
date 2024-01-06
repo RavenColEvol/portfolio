@@ -6,6 +6,8 @@ import Footer from '../components/Footer/index.astro'
 
 import Header from '../components/Header/index.astro'
 import Band from '../components/Band/index.astro'
+
+import { Projects, WorkExp, Skills, Recommendations } from '../components/Home/index.astro'
 ---
 
 <Layout title="Portfolio">
@@ -16,7 +18,10 @@ import Band from '../components/Band/index.astro'
   <Band tokens={['Innovate', 'Design', 'Develop']}/>
   <div class="container">
     <main>
-      
+      <Projects />
+      <!-- <WorkExp />
+      <Skills />
+      <Recommendations /> -->
     </main>
   </div>
   <Footer />

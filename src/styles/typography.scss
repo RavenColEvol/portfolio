@@ -43,6 +43,12 @@ h6 {
   line-height: 1.25;
 }
 
+.para-sm {
+  font-family: var(--primary-font);
+  font-size: var(--para-font-sm);
+  line-height: 1.5rem;
+}
+
 .para-18 {
   font-family: var(--primary-font);
   font-size: var(--para-font-md);
