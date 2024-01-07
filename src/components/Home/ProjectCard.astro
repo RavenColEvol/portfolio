@@ -48,4 +48,17 @@ const { title, description, cover, tech_stack } = project;
       }
     }
   }
+
+  @media only screen and (max-width:37.5em) {
+    .project__card {
+      &__description {
+        h6 {
+          font-size: 2.4rem;
+        }
+        .tech__stack {
+          font-size: var(--para-font-sm);
+        }
+      }
+    }
+  }
 </style>
