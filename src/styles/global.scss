@@ -41,16 +41,17 @@ html {
 
 @media only screen and (max-width:25em) {
   html {
-    font-size: 40%;
+    font-size: 45%;
   }
 }
 
 body {
   font-size: var(--para-font-sm);
-  line-height: 2.4rem;
+  line-height: 1.6;
   font-family: var(--primary-font);
   color: var(--white-primary);
   background: var(--black-primary);
+  overflow-x: hidden;
 }
 
 a, ul, li {
