@@ -27,12 +27,30 @@ html {
   color: var(--black-primary);
 }
 
+@media only screen and (max-width:80em) {
+  html {
+    font-size: 56%;
+  }
+}
+
+@media only screen and (max-width:56em) {
+  html {
+    font-size: 48%;
+  }
+}
+
+@media only screen and (max-width:25em) {
+  html {
+    font-size: 40%;
+  }
+}
+
 body {
   font-size: var(--para-font-sm);
   line-height: 2.4rem;
   font-family: var(--primary-font);
   color: var(--white-primary);
-  background: var(--black-primary)
+  background: var(--black-primary);
 }
 
 a, ul, li {

@@ -44,6 +44,7 @@ const header = {
     align-items: center;
     gap: 4rem;
     margin-bottom: 8rem;
+    padding: 2rem;
 
     & .content {
       flex: 1 1;
@@ -62,6 +63,14 @@ const header = {
       width: 40%;
       max-width: 40%;
       height: auto;
+    }
+  }
+
+  @media only screen and (max-width:56em) {
+    header {
+      & .portfolio-pic {
+        display: none;
+      }
     }
   }
 </style>

@@ -49,7 +49,7 @@ const skills = [
   <ul class="skills__category">
     {skills.map(({ category, icons }) => (
       <li class="skills__category__item">
-        <span class="category gradient">{category} : </span>
+        <span class="category skewed">{category}</span><br/>
         {icons.map(iconName => 
           <Icon 
             title={iconName}
@@ -64,15 +64,14 @@ const skills = [
 
 <style lang="scss">
   .skills {
-    padding: 8rem 0;
+    padding: 8rem 2rem;
 
     &__category {
       margin-top: 4rem;
 
       &__item {
+        list-style-type: none;
         padding: 2rem 0;
-        display: flex;
-        align-items: center;
         border-bottom: .2rem solid white;
 
         &:first-child {
@@ -82,19 +81,31 @@ const skills = [
         .category {
           font-weight: bold;
           font-size: var(--para-font-md);
-          margin-right: 2rem;
+          margin-bottom: 2rem;
           text-transform: uppercase;
           letter-spacing: .2rem;
         }
 
         .skills__icon {
-          height: 8rem;
+          height: 6rem;
           margin-right: 1rem;
           cursor: pointer;
           transition: .2s all ease-in-out;
 
           &:hover {
             transform: translateY(-15%);
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width:25em) {
+    .skills {
+      &__category {
+        &__item {
+          .skills__icon {
+            height: 6rem;
           }
         }
       }
