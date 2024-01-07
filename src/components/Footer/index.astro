@@ -4,9 +4,7 @@ import SocialIcons from '../SocialIcons/index.astro'
 import logo from '../../assets/logo.png';
 
 const actions = [
-  { text: 'Home', href: '#' },
-  { text: 'About', href: '#' },
-  { text: 'Contact', href: '#' },
+  { text: 'Home', href: '/' }
 ]
 ---
 
@@ -20,7 +18,11 @@ const actions = [
       </span>
       <div class="flex">
         {actions.map(action => 
-          <a class="action-link" href={action.href}>{action.text}</a>
+          <a 
+            target="_blank"
+            class="action-link" 
+            href={action.href}
+          >{action.text}</a>
         )}
       </div>
     </div>
